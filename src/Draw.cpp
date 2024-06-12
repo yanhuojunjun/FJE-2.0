@@ -21,17 +21,3 @@ std::string ConcreteDrawBuilder::build() const {
 
     return rendered_output; //输出结果
 }
-
-
-// 指导者类（Director）实现---------------------------------------------------
-void DrawDirector::setBuilder(std::shared_ptr<DrawBuilder> builder) {
-    this->builder = std::move(builder);
-}
-
-std::string DrawDirector::construct(std::shared_ptr<JsonElement> json_data) const {
-    if (!builder) {
-        throw std::runtime_error("Builder is not set.");
-    }
-    builder->setJsonData(std::move(json_data));
-    return builder->build();
-}

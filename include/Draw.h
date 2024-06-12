@@ -31,14 +31,4 @@ private:
     std::shared_ptr<JsonElement> json_data;
 };
 
-
-class DrawDirector {
-public:
-    void setBuilder(std::shared_ptr<DrawBuilder> builder);
-    std::string construct(std::shared_ptr<JsonElement> json_data) const;
-
-private:
-    std::shared_ptr<DrawBuilder> builder;
-};
-
 #endif 

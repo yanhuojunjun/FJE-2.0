@@ -11,10 +11,11 @@
 
 int main(int argc, char* argv[]) {
     if (argc < 7) {
-        std::cerr << "Usage: fje -f <json file> -s <style> -i <icon family>" << std::endl;
-        return 1;
+        std::cout << "Usage: ./fje -f <json file> -s <style> -i <icon family>" << std::endl;
+        std::cout << "<style>: rectangle or tree" << std::endl;
+        std::cout << "<icon family>: poker-face or json_defined" << std::endl;
+        return 0;
     }
-
     std::string json_file = argv[2];
     std::string style_name = argv[4];
     std::string icon_family_name = argv[6];
@@ -36,7 +37,7 @@ int main(int argc, char* argv[]) {
 
     auto style = factory->createStyle();
 
-    // 使用抽象工厂创建icon对象
+    // 使用工厂方法创建icon对象
     std::shared_ptr<IconFamilyFactory> icon_family_factory;
 
     if (icon_family_name == "poker-face") {
@@ -72,16 +73,14 @@ int main(int argc, char* argv[]) {
 
     auto icon_family = icon_family_factory->createIconFamily();
 
-    // 使用建造者模式创建可视化对象
+    // 使用建造者模式创建对象
     auto builder = std::make_shared<ConcreteDrawBuilder>();
-    DrawDirector director;
-    director.setBuilder(builder);
-
-    // 设置建造者的参数
     builder->setStyle(std::move(style));
     builder->setIconFamily(std::move(icon_family));
+    builder->setJsonData(json_data);
 
-    std::string result = director.construct(json_data);
+    //构建输出
+    std::string result = builder->build();
     std::cout << result << std::endl;
 
     return 0;

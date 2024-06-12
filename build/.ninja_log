@@ -1,0 +1,8 @@
+# ninja log v5
+19	1922	7398971485779778	CMakeFiles/fje.dir/src/Icon.cpp.obj	3c0a1245969fc30e
+11	1947	7398971485935917	CMakeFiles/fje.dir/src/JsonNode.cpp.obj	585841e11ad8ea49
+39	2010	7398971486650931	CMakeFiles/fje.dir/src/Draw.cpp.obj	42ccd76c9ce52029
+60	2122	7398971487777526	CMakeFiles/fje.dir/src/JsonLoader.cpp.obj	a2ed17b8f2987ba
+28	2351	7398971490019069	CMakeFiles/fje.dir/src/Style.cpp.obj	746a569f1da9329e
+3	3262	7398971499123739	CMakeFiles/fje.dir/src/main.cpp.obj	625882be4fd816dc
+3263	3777	7398971504280672	fje.exe	1c67911d00e931ac

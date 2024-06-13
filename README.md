@@ -77,10 +77,10 @@ poker-face-icon-family: 中间节点icon：♢ 叶节点icon：♤
 
    ```
    cmake ..
-   make    (windows下可以使用“ninja”)
+   make    (windows vscode终端可以使用“ninja”)
    ```
 
-4. 转换编码方式 (windows下)
+4. 转换编码方式 (windows vscode终端下)
 
    ```
    chcp 65001

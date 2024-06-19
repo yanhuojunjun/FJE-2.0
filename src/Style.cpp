@@ -8,14 +8,14 @@ std::string TreeStyle::render(std::shared_ptr<JsonElement> json_data) {
 
 std::string TreeStyle::renderTree(std::shared_ptr<JsonElement> data, const std::string& prefix) const {
     std::string result;
-    const auto* obj = dynamic_cast<const JsonObject*>(data.get());
+    auto* obj = dynamic_cast<JsonObject*>(data.get());
     if (obj) {
-        const auto& keys = obj->getKeys();
-        const auto& values = obj->getValues();
-        int len = (int)keys.size();
-        for (int i = 0; i < len; ++i) {
-            const auto& key = keys[i];
-            auto& value = values[i];
+        auto iterator = obj->createIterator();
+        int len = (int)obj->getKeys().size();
+        int i = 0;
+        while(iterator->hasNext()){
+            const auto& key = iterator->getNextKey();
+            const auto& value = iterator->getNextValue();
             if (const auto* child_obj = dynamic_cast<const JsonObject*>(value.get())) {
                 result += prefix;
                 std::string newPrefix = prefix;
@@ -41,6 +41,7 @@ std::string TreeStyle::renderTree(std::shared_ptr<JsonElement> data, const std::
                 }
                 result += "\n";
             }
+            i++;
         }
     }
     return result;
@@ -80,14 +81,14 @@ std::string RectangleStyle::render(std::shared_ptr<JsonElement> json_data) {
 
 std::string RectangleStyle::renderRectangle(std::shared_ptr<JsonElement> data, const std::string& prefix, bool getDisplayLength) {
     std::string result;
-    const auto* obj = dynamic_cast<const JsonObject*>(data.get());
+    auto* obj = dynamic_cast<JsonObject*>(data.get());
     if (obj) {
-        const auto& keys = obj->getKeys();
-        const auto& values = obj->getValues();
-        int len = (int)keys.size();
-        for (int i = 0; i < len; ++i) {
-            const auto& key = keys[i];
-            auto& value = values[i];
+        auto iterator = obj->createIterator();
+        int len = (int)obj->getKeys().size();
+        int i = 0;
+        while(iterator->hasNext()){
+            const auto& key = iterator->getNextKey();
+            const auto& value = iterator->getNextValue();
             if (const auto* child_obj = dynamic_cast<const JsonObject*>(value.get())) {
                 std::string curRow;
                 curRow += prefix;

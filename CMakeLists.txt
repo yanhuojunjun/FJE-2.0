@@ -12,6 +12,7 @@ set(SOURCES
         src/Style.cpp
         src/Draw.cpp
         src/JsonLoader.cpp
+        src/Iterator.cpp
 )
 
 set(HEADERS
@@ -20,6 +21,7 @@ set(HEADERS
         include/Style.h
         include/Draw.h
         include/JsonLoader.h
+        include/Iterator.h
 )
 
 add_executable(fje ${SOURCES} ${HEADERS})

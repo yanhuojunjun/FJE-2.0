@@ -8,6 +8,8 @@
 #include <vector>
 #include <memory>
 
+class Iterator;
+
 // 抽象组件
 class JsonElement {
 public:
@@ -21,10 +23,12 @@ public:
     const std::vector<std::string>& getKeys() const;
     const std::vector<std::shared_ptr<JsonElement>>& getValues() const;
     void setIcon(std::shared_ptr<IconFamily> icon_family);
+    std::shared_ptr<Iterator> createIterator();
 
 private:
     std::vector<std::string> keys;
     std::vector<std::shared_ptr<JsonElement>> values;
+    friend class MyIterator;
 };
 
 // 叶子组件：json值

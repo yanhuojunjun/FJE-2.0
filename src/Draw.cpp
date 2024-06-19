@@ -1,19 +1,19 @@
 #include "Draw.h"
 
 // 具体的建造者类实现-----------------------------------------------
-void ConcreteDrawBuilder::setStyle(std::shared_ptr<Style> style) {
-    this->style = std::move(style);
+void DrawStrategyBuilder::build_Style_Strategy(std::unique_ptr<StyleFactory> styleFactory) {
+    this->style = styleFactory->createStyle();
 }
 
-void ConcreteDrawBuilder::setIconFamily(std::shared_ptr<IconFamily> icon_family) {
-    this->icon_family = std::move(icon_family);
+void DrawStrategyBuilder::build_IconFamily_Strategy(std::unique_ptr<IconFamilyFactory> iconFamilyFactory) {
+    this->icon_family = iconFamilyFactory->createIconFamily();
 }
 
-void ConcreteDrawBuilder::setJsonData(std::shared_ptr<JsonElement> json_data) {
+void DrawStrategyBuilder::setJsonData(std::shared_ptr<JsonElement> json_data) {
     this->json_data = std::move(json_data);
 }
 
-std::string ConcreteDrawBuilder::build() const {
+std::string DrawStrategyBuilder::draw() {
     auto* obj = dynamic_cast<JsonObject*>(this->json_data.get());
 
     obj->setIcon(this->icon_family);                         //设置图案

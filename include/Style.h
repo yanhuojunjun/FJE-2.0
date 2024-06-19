@@ -9,6 +9,7 @@
 #include <cwchar>
 
 #include "JsonNode.h"
+#include "Iterator.h"
 
 // 风格接口
 class Style {

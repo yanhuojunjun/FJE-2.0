@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: FJE_lmj
-# Configurations: 
+# Configurations: Debug
 # =============================================================================
 
 #############################################
@@ -20,6 +20,11 @@
 
 ninja_required_version = 1.5
 
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
 # =============================================================================
 # Include auxiliary files.
 
@@ -44,44 +49,51 @@ cmake_ninja_workdir = D$:/Desktop/FJE/build/
 
 build cmake_object_order_depends_target_fje: phony || CMakeFiles/fje.dir
 
-build CMakeFiles/fje.dir/src/main.cpp.obj: CXX_COMPILER__fje_unscanned_ D$:/Desktop/FJE/src/main.cpp || cmake_object_order_depends_target_fje
+build CMakeFiles/fje.dir/src/main.cpp.obj: CXX_COMPILER__fje_unscanned_Debug D$:/Desktop/FJE/src/main.cpp || cmake_object_order_depends_target_fje
   DEP_FILE = CMakeFiles\fje.dir\src\main.cpp.obj.d
-  FLAGS = -std=gnu++17
+  FLAGS = -g -std=gnu++17
   INCLUDES = -ID:/Desktop/FJE/include
   OBJECT_DIR = CMakeFiles\fje.dir
   OBJECT_FILE_DIR = CMakeFiles\fje.dir\src
 
-build CMakeFiles/fje.dir/src/JsonNode.cpp.obj: CXX_COMPILER__fje_unscanned_ D$:/Desktop/FJE/src/JsonNode.cpp || cmake_object_order_depends_target_fje
+build CMakeFiles/fje.dir/src/JsonNode.cpp.obj: CXX_COMPILER__fje_unscanned_Debug D$:/Desktop/FJE/src/JsonNode.cpp || cmake_object_order_depends_target_fje
   DEP_FILE = CMakeFiles\fje.dir\src\JsonNode.cpp.obj.d
-  FLAGS = -std=gnu++17
+  FLAGS = -g -std=gnu++17
   INCLUDES = -ID:/Desktop/FJE/include
   OBJECT_DIR = CMakeFiles\fje.dir
   OBJECT_FILE_DIR = CMakeFiles\fje.dir\src
 
-build CMakeFiles/fje.dir/src/Icon.cpp.obj: CXX_COMPILER__fje_unscanned_ D$:/Desktop/FJE/src/Icon.cpp || cmake_object_order_depends_target_fje
+build CMakeFiles/fje.dir/src/Icon.cpp.obj: CXX_COMPILER__fje_unscanned_Debug D$:/Desktop/FJE/src/Icon.cpp || cmake_object_order_depends_target_fje
   DEP_FILE = CMakeFiles\fje.dir\src\Icon.cpp.obj.d
-  FLAGS = -std=gnu++17
+  FLAGS = -g -std=gnu++17
   INCLUDES = -ID:/Desktop/FJE/include
   OBJECT_DIR = CMakeFiles\fje.dir
   OBJECT_FILE_DIR = CMakeFiles\fje.dir\src
 
-build CMakeFiles/fje.dir/src/Style.cpp.obj: CXX_COMPILER__fje_unscanned_ D$:/Desktop/FJE/src/Style.cpp || cmake_object_order_depends_target_fje
+build CMakeFiles/fje.dir/src/Style.cpp.obj: CXX_COMPILER__fje_unscanned_Debug D$:/Desktop/FJE/src/Style.cpp || cmake_object_order_depends_target_fje
   DEP_FILE = CMakeFiles\fje.dir\src\Style.cpp.obj.d
-  FLAGS = -std=gnu++17
+  FLAGS = -g -std=gnu++17
   INCLUDES = -ID:/Desktop/FJE/include
   OBJECT_DIR = CMakeFiles\fje.dir
   OBJECT_FILE_DIR = CMakeFiles\fje.dir\src
 
-build CMakeFiles/fje.dir/src/Draw.cpp.obj: CXX_COMPILER__fje_unscanned_ D$:/Desktop/FJE/src/Draw.cpp || cmake_object_order_depends_target_fje
+build CMakeFiles/fje.dir/src/Draw.cpp.obj: CXX_COMPILER__fje_unscanned_Debug D$:/Desktop/FJE/src/Draw.cpp || cmake_object_order_depends_target_fje
   DEP_FILE = CMakeFiles\fje.dir\src\Draw.cpp.obj.d
-  FLAGS = -std=gnu++17
+  FLAGS = -g -std=gnu++17
   INCLUDES = -ID:/Desktop/FJE/include
   OBJECT_DIR = CMakeFiles\fje.dir
   OBJECT_FILE_DIR = CMakeFiles\fje.dir\src
 
-build CMakeFiles/fje.dir/src/JsonLoader.cpp.obj: CXX_COMPILER__fje_unscanned_ D$:/Desktop/FJE/src/JsonLoader.cpp || cmake_object_order_depends_target_fje
+build CMakeFiles/fje.dir/src/JsonLoader.cpp.obj: CXX_COMPILER__fje_unscanned_Debug D$:/Desktop/FJE/src/JsonLoader.cpp || cmake_object_order_depends_target_fje
   DEP_FILE = CMakeFiles\fje.dir\src\JsonLoader.cpp.obj.d
-  FLAGS = -std=gnu++17
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -ID:/Desktop/FJE/include
+  OBJECT_DIR = CMakeFiles\fje.dir
+  OBJECT_FILE_DIR = CMakeFiles\fje.dir\src
+
+build CMakeFiles/fje.dir/src/Iterator.cpp.obj: CXX_COMPILER__fje_unscanned_Debug D$:/Desktop/FJE/src/Iterator.cpp || cmake_object_order_depends_target_fje
+  DEP_FILE = CMakeFiles\fje.dir\src\Iterator.cpp.obj.d
+  FLAGS = -g -std=gnu++17
   INCLUDES = -ID:/Desktop/FJE/include
   OBJECT_DIR = CMakeFiles\fje.dir
   OBJECT_FILE_DIR = CMakeFiles\fje.dir\src
@@ -94,7 +106,8 @@ build CMakeFiles/fje.dir/src/JsonLoader.cpp.obj: CXX_COMPILER__fje_unscanned_ D$
 #############################################
 # Link the executable fje.exe
 
-build fje.exe: CXX_EXECUTABLE_LINKER__fje_ CMakeFiles/fje.dir/src/main.cpp.obj CMakeFiles/fje.dir/src/JsonNode.cpp.obj CMakeFiles/fje.dir/src/Icon.cpp.obj CMakeFiles/fje.dir/src/Style.cpp.obj CMakeFiles/fje.dir/src/Draw.cpp.obj CMakeFiles/fje.dir/src/JsonLoader.cpp.obj
+build fje.exe: CXX_EXECUTABLE_LINKER__fje_Debug CMakeFiles/fje.dir/src/main.cpp.obj CMakeFiles/fje.dir/src/JsonNode.cpp.obj CMakeFiles/fje.dir/src/Icon.cpp.obj CMakeFiles/fje.dir/src/Style.cpp.obj CMakeFiles/fje.dir/src/Draw.cpp.obj CMakeFiles/fje.dir/src/JsonLoader.cpp.obj CMakeFiles/fje.dir/src/Iterator.cpp.obj
+  FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\fje.dir
   POST_BUILD = cd .

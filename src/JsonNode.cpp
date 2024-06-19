@@ -1,4 +1,5 @@
 #include "JsonNode.h"
+#include "Iterator.h"
 
 // 组合组件
 void JsonObject::add(const std::string& key, std::shared_ptr<JsonElement> value) {
@@ -28,6 +29,8 @@ void JsonObject::setIcon(std::shared_ptr<IconFamily> icon_family) {
         keys[i].insert(0, current_icon);      //插入当前节点图案（中间节点或者叶子节点图案）
     }
 }
+
+std::shared_ptr<Iterator> JsonObject::createIterator() { return std::make_shared<MyIterator>(this); }
 
 // 叶子组件
 JsonValue::JsonValue(std::string value) : value(std::move(value)) {}

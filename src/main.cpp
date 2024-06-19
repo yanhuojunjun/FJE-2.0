@@ -24,21 +24,19 @@ int main(int argc, char* argv[]) {
     std::shared_ptr<JsonLoader> loader;
     auto json_data = loader->loadJson(json_file);
 
-    // 使用工厂方法模式创建风格对象
-    std::shared_ptr<StyleFactory> factory;
+    // 风格
+    std::unique_ptr<StyleFactory> style_factory;
 
     if (style_name == "tree") {
-        factory = std::make_unique<TreeStyleFactory>();
+        style_factory = std::make_unique<TreeStyleFactory>();
     } else if (style_name == "rectangle") {
-        factory = std::make_unique<RectangleStyleFactory>();
+        style_factory = std::make_unique<RectangleStyleFactory>();
     } else {
         throw std::invalid_argument("Unknown style: " + style_name);
     }
 
-    auto style = factory->createStyle();
-
-    // 使用工厂方法创建icon对象
-    std::shared_ptr<IconFamilyFactory> icon_family_factory;
+    // icon
+    std::unique_ptr<IconFamilyFactory> icon_family_factory;
 
     if (icon_family_name == "poker-face") {
         icon_family_factory = std::make_unique<PokerFaceIconFamilyFactory>();
@@ -71,16 +69,14 @@ int main(int argc, char* argv[]) {
         throw std::invalid_argument("Unknown icon family: " + icon_family_name);
     }
 
-    auto icon_family = icon_family_factory->createIconFamily();
-
-    // 使用建造者模式创建对象
-    auto builder = std::make_shared<ConcreteDrawBuilder>();
-    builder->setStyle(std::move(style));
-    builder->setIconFamily(std::move(icon_family));
+    // 使用 建造者模式 + 策略模式 创建对象
+    auto builder = std::make_shared<DrawStrategyBuilder>();
+    builder->build_Style_Strategy(std::move(style_factory));
+    builder->build_IconFamily_Strategy(std::move(icon_family_factory));
     builder->setJsonData(json_data);
 
     //构建输出
-    std::string result = builder->build();
+    std::string result = builder->draw();
     std::cout << result << std::endl;
 
     return 0;

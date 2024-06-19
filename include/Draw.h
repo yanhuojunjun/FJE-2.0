@@ -8,22 +8,12 @@
 #include <memory>
 #include <stdexcept>
 
-class DrawBuilder {
+class DrawStrategyBuilder {
 public:
-    virtual void setStyle(std::shared_ptr<Style> style) = 0;
-    virtual void setIconFamily(std::shared_ptr<IconFamily> icon_family) = 0;
-    virtual void setJsonData(std::shared_ptr<JsonElement> json_data) = 0;
-    virtual std::string build() const = 0;
-    virtual ~DrawBuilder() = default;
-};
-
-
-class ConcreteDrawBuilder : public DrawBuilder {
-public:
-    void setStyle(std::shared_ptr<Style> style) override;
-    void setIconFamily(std::shared_ptr<IconFamily> icon_family) override;
-    void setJsonData(std::shared_ptr<JsonElement> json_data) override;
-    std::string build() const override;
+    void build_Style_Strategy(std::unique_ptr<StyleFactory> styleFactory);
+    void build_IconFamily_Strategy(std::unique_ptr<IconFamilyFactory> iconFamilyFactory);
+    void setJsonData(std::shared_ptr<JsonElement> json_data);
+    std::string draw();
 
 private:
     std::shared_ptr<Style> style;

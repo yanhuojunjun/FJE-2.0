@@ -1,0 +1,44 @@
+[
+{
+  "directory": "D:/Desktop/FJE/build",
+  "command": "D:\\msys64\\mingw64\\bin\\c++.exe -ID:/Desktop/FJE/include -g -std=gnu++17 -o CMakeFiles\\fje.dir\\src\\main.cpp.obj -c D:\\Desktop\\FJE\\src\\main.cpp",
+  "file": "D:\\Desktop\\FJE\\src\\main.cpp",
+  "output": "CMakeFiles\\fje.dir\\src\\main.cpp.obj"
+},
+{
+  "directory": "D:/Desktop/FJE/build",
+  "command": "D:\\msys64\\mingw64\\bin\\c++.exe -ID:/Desktop/FJE/include -g -std=gnu++17 -o CMakeFiles\\fje.dir\\src\\JsonNode.cpp.obj -c D:\\Desktop\\FJE\\src\\JsonNode.cpp",
+  "file": "D:\\Desktop\\FJE\\src\\JsonNode.cpp",
+  "output": "CMakeFiles\\fje.dir\\src\\JsonNode.cpp.obj"
+},
+{
+  "directory": "D:/Desktop/FJE/build",
+  "command": "D:\\msys64\\mingw64\\bin\\c++.exe -ID:/Desktop/FJE/include -g -std=gnu++17 -o CMakeFiles\\fje.dir\\src\\Icon.cpp.obj -c D:\\Desktop\\FJE\\src\\Icon.cpp",
+  "file": "D:\\Desktop\\FJE\\src\\Icon.cpp",
+  "output": "CMakeFiles\\fje.dir\\src\\Icon.cpp.obj"
+},
+{
+  "directory": "D:/Desktop/FJE/build",
+  "command": "D:\\msys64\\mingw64\\bin\\c++.exe -ID:/Desktop/FJE/include -g -std=gnu++17 -o CMakeFiles\\fje.dir\\src\\Style.cpp.obj -c D:\\Desktop\\FJE\\src\\Style.cpp",
+  "file": "D:\\Desktop\\FJE\\src\\Style.cpp",
+  "output": "CMakeFiles\\fje.dir\\src\\Style.cpp.obj"
+},
+{
+  "directory": "D:/Desktop/FJE/build",
+  "command": "D:\\msys64\\mingw64\\bin\\c++.exe -ID:/Desktop/FJE/include -g -std=gnu++17 -o CMakeFiles\\fje.dir\\src\\Draw.cpp.obj -c D:\\Desktop\\FJE\\src\\Draw.cpp",
+  "file": "D:\\Desktop\\FJE\\src\\Draw.cpp",
+  "output": "CMakeFiles\\fje.dir\\src\\Draw.cpp.obj"
+},
+{
+  "directory": "D:/Desktop/FJE/build",
+  "command": "D:\\msys64\\mingw64\\bin\\c++.exe -ID:/Desktop/FJE/include -g -std=gnu++17 -o CMakeFiles\\fje.dir\\src\\JsonLoader.cpp.obj -c D:\\Desktop\\FJE\\src\\JsonLoader.cpp",
+  "file": "D:\\Desktop\\FJE\\src\\JsonLoader.cpp",
+  "output": "CMakeFiles\\fje.dir\\src\\JsonLoader.cpp.obj"
+},
+{
+  "directory": "D:/Desktop/FJE/build",
+  "command": "D:\\msys64\\mingw64\\bin\\c++.exe -ID:/Desktop/FJE/include -g -std=gnu++17 -o CMakeFiles\\fje.dir\\src\\Iterator.cpp.obj -c D:\\Desktop\\FJE\\src\\Iterator.cpp",
+  "file": "D:\\Desktop\\FJE\\src\\Iterator.cpp",
+  "output": "CMakeFiles\\fje.dir\\src\\Iterator.cpp.obj"
+}
+]

@@ -6,10 +6,6 @@ Funny JSON Explorer（**FJE**），是一个JSON文件可视化的命令行界�
 
 ```shell
 fje -f <json file> -s <style> -i <icon family>
-```
-
-
-```
 {
     oranges: {
         'mandarin': {                            ├─ oranges
@@ -22,7 +18,7 @@ fje -f <json file> -s <style> -i <icon family>
         'pink lady': null
     }
 }
-````
+```
 
 FJE可以快速切换**风格**（style），包括：树形（tree）、矩形（rectangle）；
 
@@ -52,10 +48,12 @@ poker-face-icon-family: 中间节点icon：♢ 叶节点icon：♤
 
 ### 二. 项目任务
 
-使用**工厂方法**（Factory）、**抽象工厂**（Abstract Factory）、**建造者**（Builder）模式、**组合模式**（Composition），完成功能的同时，使得程序易于扩展和维护。
+* **FJE-1.0：**使用**工厂方法**（Factory）、**抽象工厂**（Abstract Factory）、**建造者**（Builder）模式、**组合模式**（Composition），完成功能的同时，使得程序易于扩展和维护。
 
 1. 不改变现有代码，只需添加新的抽象工厂，即可添加新的风格
 2. 通过配置文件，可添加新的图标族
+
+* **FJE-2.0：**对已有`FJE-1.0`实现进行设计重构 改用 **迭代器模式** + **策略模式**
 
 ### 三. 项目运行方式
 

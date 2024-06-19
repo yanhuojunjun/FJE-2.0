@@ -8,7 +8,7 @@
 #include <vector>
 #include <memory>
 
-class Iterator;
+class Iterator; //循环依赖解决方式
 
 // 抽象组件
 class JsonElement {

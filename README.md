@@ -101,3 +101,5 @@ For example, to get the result in rectangle style with a custom icon family, ent
 ./fje -f ../input/example.json -s rectangle -i json_defined
 ```
 
+### 4. Project Class Diagram Design
+![类图1](https://github.com/user-attachments/assets/f3e65dff-aec8-48ae-9ce0-abb8bf639997)

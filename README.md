@@ -1,8 +1,8 @@
 # Funny JSON Explorer
 
-### 一. 项目介绍
+### 1. Project Introduction
 
-Funny JSON Explorer（**FJE**），是一个JSON文件可视化的命令行界面小工具
+Funny JSON Explorer (FJE) is a command-line tool for visualizing JSON files.
 
 ```shell
 fje -f <json file> -s <style> -i <icon family>
@@ -20,7 +20,7 @@ fje -f <json file> -s <style> -i <icon family>
 }
 ```
 
-FJE可以快速切换**风格**（style），包括：树形（tree）、矩形（rectangle）；
+FJE allows you to quickly switch styles, including tree (tree) and rectangle (rectangle).
 
 ```
 ├─ oranges                             ┌─ oranges ───────────────────────────────┐
@@ -33,7 +33,7 @@ FJE可以快速切换**风格**（style），包括：树形（tree）、矩形�
         树形（tree）                                   矩形（rectangle）
 ````
 
-也可以指定**图标族**（icon family），为中间节点或叶节点指定一套icon
+You can also specify an icon family to assign a set of icons to either the middle or leaf nodes.
 
 ```
 ├─♢oranges                                 
@@ -43,27 +43,28 @@ FJE可以快速切换**风格**（style），包括：树形（tree）、矩形�
 └─♢apples                                  
    └─♤gala                                 
 
-poker-face-icon-family: 中间节点icon：♢ 叶节点icon：♤                 
+poker-face-icon-family: Middle node icon: ♢ Leaf node icon: ♤                 
 ```
 
-### 二. 项目任务
+### 2. Project Tasks
 
-* FJE-1.0：使用**工厂方法**（Factory）、**抽象工厂**（Abstract Factory）、**建造者**（Builder）模式、**组合模式**（Composition），完成功能的同时，使得程序易于扩展和维护。
+* FJE-1.0: Using Factory Method, Abstract Factory, Builder, and Composite patterns, complete the functionality while making the program easy to expand and maintain.
 
-1. 不改变现有代码，只需添加新的抽象工厂，即可添加新的风格
-2. 通过配置文件，可添加新的图标族
+1. Without changing the existing code, new styles can be added simply by adding a new abstract factory.
 
-* FJE-2.0：对已有`FJE-1.0`实现进行设计重构 改用 **迭代器模式** + **策略模式**
+2. New icon families can be added via configuration files.
 
-### 三. 项目运行方式
+* FJE-2.0: Refactor the design of the existing FJE-1.0 implementation by adopting the Iterator Pattern and Strategy Pattern.
 
-1. 克隆仓库
+### 3. Project Operation
+
+Clone the repository:
 
    ```
    git clone -b master https://github.com/monkek123King/FJE.git
    ```
 
-2. 创建build文件夹
+Create the build folder:
 
    ```
    cd FJE
@@ -71,22 +72,22 @@ poker-face-icon-family: 中间节点icon：♢ 叶节点icon：♤
    cd build
    ```
 
-3. 编译项目
+Compile the project:
 
    ```
    cmake ..
-   make    (windows vscode终端可以使用“ninja”)
+   make    (On Windows, you can use "ninja" in VS Code terminal)
    ```
 
-4. 转换编码方式 (windows vscode终端下)
+Change the encoding format (for Windows users in VS Code terminal):
 
    ```
    chcp 65001
    ```
 
-5. 调整输入：项目输入集中在`input`文件夹下，`example.json` 为待转换的json文件，`icon.json`为自定义的图标族，可以改动这些文件来调整项目的输入
+5. Adjust the input: Project inputs are centralized in the `input` folder. `example.json` is the JSON file to be converted, and `icon.json` is for custom icon families. You can modify these files to adjust the project’s input.
 
-6. 执行程序：输入`./fje -help`可以得到下面的输出，根据自己的需求输入指定指令即可
+6. Run the program: Input `./fje -help` to get the following output, and then enter the command as needed:
 
    ```
    Usage: ./fje -f <json file> -s <style> -i <icon family>
@@ -94,7 +95,7 @@ poker-face-icon-family: 中间节点icon：♢ 叶节点icon：♤
    <icon family>: poker-face or json_defined
    ```
 
-例如，输入下面的指令可以得到矩形风格，自定义图标族下的转换结果：
+For example, to get the result in rectangle style with a custom icon family, enter the following command:
 
 ```
 ./fje -f ../input/example.json -s rectangle -i json_defined
